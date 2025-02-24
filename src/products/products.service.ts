@@ -1,6 +1,7 @@
 import {
   ConflictException,
   Injectable,
+  InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -26,6 +27,8 @@ export class ProductsService {
         }
       }
     }
+
+    // throw new InternalServerErrorException();
   }
 
   async findAll() {
